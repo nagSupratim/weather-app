@@ -17,7 +17,10 @@ weatherForm.addEventListener('submit', (event) => {
   event.preventDefault();
   modfOutput.innerHTML = `<p style='text-align:center'>Loading...</p>`;
   jsonOutput.innerHTML = `<p style='text-align:center'>Loading...</p>`;
-  const url = `http://localhost:3000/weather?address=${searchInput.value}`;
+  // //for local
+  // const url = `http://localhost:3000/weather?address=${searchInput.value}`;
+  //for heroku
+  const url = `/weather?address=${searchInput.value}`;
   fetch(url)
     .then((response) => response.json())
     .then((data) => {
