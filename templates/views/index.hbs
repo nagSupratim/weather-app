@@ -1,0 +1,38 @@
+
+{{>head}}
+<div class="row">
+    <div class="col-12 col-lg-5">
+        <p>Use this site to get your Weather data!</p>
+        <form id='weather-form' class="row g-2">
+            <div class="col-sm-5">
+                <input type="text" class="form-control" id="address-input" placeholder="Location"/>
+            </div>
+            <div class="col-sm">
+                <button type="submit" class="btn btn-outline-primary mb-3">Search</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-12 col-lg-7" id='op-card'>
+        <div class="card text-center">
+            <div class="card-header">
+                <ul class="nav nav-tabs card-header-tabs" id='op-nav'>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="true" href="#">Weather Info</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">JSON Response { }</a>
+                </li>
+                </ul>
+            </div>
+            <div class="card-body">
+                <div class="card">
+                    <div class="card-body">
+                        <pre class="card-text" id='modf-data'></pre>
+                        <p class="card-text" id='json-data'></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{>foot}}
