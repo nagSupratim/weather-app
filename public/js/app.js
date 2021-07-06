@@ -25,14 +25,19 @@ weatherForm.addEventListener('submit', (event) => {
     .then((response) => response.json())
     .then((data) => {
       jsonOutput.innerHTML = ` 
-      <p><a href="${url}">${url}</a></>
+      <p><a href="${url}">${url}</a></p>
         ${JSON.stringify(data)}
       `;
       if (data.error) throw new Error(data.error);
+      const feel =
+        data.temperature === data.feelslike
+          ? `It is <strong>${data.temperature}</strong> degrees outside and it do feels like <strong>${data.feelslike}</strong> degrees`
+          : `Though it is <strong>${data.temperature}</strong> degrees outside, it feels like <strong>${data.feelslike}</strong> degrees`;
+
       modfOutput.innerHTML = `
       <strong>Address</strong> : ${data.address}
-      <strong>Currently it is</strong> : ${data.weather}
-      Though it is <strong>${data.temperature}</strong> degrees outside, it feels like <strong>${data.feelslike}</strong> degrees
+      <strong>Currently it is</strong> : ${data.weather} 
+      ${feel}
       <strong>Location</strong> : ${data.location}
       `;
     })
